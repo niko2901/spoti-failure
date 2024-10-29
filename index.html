@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <form id="audioForm">
+            <label for="audio-file">Submit Audio File:</label>
+            <input id="audio-in" type="file" name="audio-file" accept="audio/*">
+
+            <input type="submit" value="Submit">
+        </form>
+    </main>
+
+    <div class="player">
+        <audio id="audio" src=""></audio>
+        <div class="buttons">
+            <img id="pause" src="/images/icons/pause.svg" alt="" height="37px" onclick="play_stat()">
+            <img id="play" src="/images/icons/play.svg" alt="" height="37px" onclick="play_stat()">
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
