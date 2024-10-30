@@ -33,17 +33,17 @@ form {
 
 .player {
     display: flex;
+    flex-flow: row nowrap;
     justify-content: center;
-    align-items: center;
-    align-content: center;
     height: 15vh;
     width: 100%;
     border: 1px solid white;
 }
 
 .player audio{
-    width: 80%;
+    width: 50%;
     height: 30px;
+    display: none;
 }
 
 .buttons {
@@ -53,14 +53,40 @@ form {
     align-items: center;
     height: 50%;
     width: 10%;
-    border: 1px solid white;
     contain: content;
 }
 
-.buttons > img {
-    position: absolute;
+.buttons img {
+    height: 32px;
 }
 
-#pause {
-    display: none;
+.controls {
+    position: absolute;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    right: 40px;
+    align-self: center;
+    border: 1px solid white;
+}
+
+.controls img {
+    height: 25px;
+}
+
+#seekControl {
+    width: 85%;
+    height: 10px;
+}
+
+.seek-controls {
+    grid-column-start: 2;
+    display: flex;
+    flex-flow: column-reverse;
+    width: 40%;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid white;
 }
