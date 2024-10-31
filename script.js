@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const seekControl = document.getElementById('seekControl');
     const duration = document.getElementById('duration');
     const currentTime = document.getElementById('currentTime');
+    const albumCover = document.getElementById('albumCover');
 
     
     const play_location = '/images/icons/play.svg';
@@ -32,26 +33,27 @@ document.addEventListener('DOMContentLoaded', () => {
             play.src = play_location;
             pause_stat = true;
             audio_player.load();
-        }
-    });
 
-    form.addEventListener('submit', (event) => {
-        event.preventDefault();
-    
-        const file = audio_input.files[0];
-        
-        if(file) {
             jsmediatags.read(file, {
                 onSuccess: function(tag) {
                     const tags = tag.tags;
+                    const picture = tag.tags.picture;
 
                     document.getElementById('title').textContent = tags.title || 'Unknown Title';
                     document.getElementById('artist').textContent = tags.artist || 'Unknown Artist';
+
+                    if(picture) {
+                        const base64String = picture.data.reduce((data, byte) => data + String.fromCharCode(byte), '');
+                        const imageUrl = `data:${picture.format};base64,${btoa(base64String)}`;
+                        albumCover.src = imageUrl;
+                    }
+                    else {
+                        albumCover.src = '/images/defaults/album.png';
+                    }
                 }
             });
         }
     });
-    
     
     audio_player.addEventListener('ended', () => {
         play.src = play_location;
@@ -61,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
     audio_player.addEventListener('loadedmetadata', () => {
         seekControl.max = audio_player.duration;
         duration.textContent = formatTime(audio_player.duration);
-        console.log(audio_player.duration);
+        // console.log(audio_player.duration);
         // console.log(seekControl.max);
     })
     

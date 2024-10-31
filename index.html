@@ -8,13 +8,24 @@
     <script src="/node_modules/jsmediatags/dist/jsmediatags.min.js"></script>
 </head>
 <body>
+    <header class="headMenu">
+        <img src="/images/icons/Spotify_Logo.png" alt="" class="logo" height="30px">
+    </header>
     <main>
+        <div class="sidebar">
+
+        </div>
+
         <form id="audioForm">
             <label for="audio-file">Submit Audio File:</label>
             <input id="audio-in" type="file" name="audio-file" accept="audio/*">
 
             <input type="submit" value="Submit">
         </form>
+
+        <div class="playView">
+
+        </div>
     </main>
 
     <div class="player">
@@ -23,8 +34,8 @@
         <div class="song-info">
             <img id="albumCover" src="/images/defaults/album.png" alt="">
             <div class="details">
-                <p>Title: <span id="title">N/A</span></p>
-                <p>Artist: <span id="artist">N/A</span></p>
+                <p><span id="title">N/A</span></p>
+                <p><span id="artist">N/A</span></p>
             </div>
         </div>
         <div class="seek-controls">

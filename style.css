@@ -12,32 +12,30 @@ body {
 }
 
 main {
-    height: 83vh;
+    height: calc(100vh - 80px - 60px);
     display: flex;
-    justify-content: center;
     align-items: center;
-    border: 1px solid white;
 }
 
 form {
     display: flex;
     flex-flow: column wrap;
-    height: 200px;
-    width: 400px;
+    height: 100%;
+    width: calc(80% - 250px);
     background-color: #474A56;
     outline: 2px dashed gray;
     border-radius: 5px;
     justify-content: center;
     align-items: center;
+    margin-inline: 5px;
 }
 
 .player {
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
-    height: 17vh;
+    height: 80px;
     width: 100%;
-    border: 1px solid white;
 }
 
 .player audio{
@@ -69,7 +67,6 @@ form {
     align-content: center;
     right: 40px;
     align-self: center;
-    border: 1px solid white;
 }
 
 .controls img {
@@ -89,16 +86,15 @@ form {
     justify-content: center;
     align-items: center;
     align-content: center;
-    border: 1px solid white;
-
 }
 
 .song-info {
-    left: 20px;
+    left: 10px;
     width: auto;
     display: flex;
     align-self: center;
     position: absolute;
+    justify-content: space-around;
 }
 
 .details {
@@ -114,9 +110,10 @@ form {
 }
 
 #albumCover {
-    height: 80px;
+    height: 58px;
     width: auto;
-    border-radius: 8px;
+    border-radius: 5px;
+    margin-right: 10px;
 }
 
 .playTime {
@@ -131,4 +128,27 @@ form {
 .playTime p{
     margin: 0;
     padding: 0;
+}
+
+.headMenu {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+}
+
+.sidebar {
+    height: 100%;
+    background-color: gray;
+    width: 35%;
+    border-radius: 10px;
+    margin: 0 5px 0 5px;
+}
+
+.playView {
+    width: calc(30% - 10px);
+    height: 100%;
+    background-color: gray;
+    border-radius: 10px;
+    margin: 0 5px 0 5px;
 }
