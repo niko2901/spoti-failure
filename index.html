@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spotifail</title>
     <link rel="stylesheet" href="style.css">
+    <script src="/node_modules/jsmediatags/dist/jsmediatags.min.js"></script>
 </head>
 <body>
     <main>
@@ -18,10 +19,22 @@
 
     <div class="player">
         <audio id="audio" src="" controls></audio>
+
+        <div class="song-info">
+            <img id="albumCover" src="/images/defaults/album.png" alt="">
+            <div class="details">
+                <p>Title: <span id="title">N/A</span></p>
+                <p>Artist: <span id="artist">N/A</span></p>
+            </div>
+        </div>
         <div class="seek-controls">
-            <input type="range" id="seekControl" value="0" min="0" step="0.1">
             <div class="buttons">
                 <img id="play" src="/images/icons/play.svg" alt="" height="37px" onclick="play_stat()" >
+            </div>
+            <div class="playTime">
+                <p id="currentTime">0:00</p>
+                <input type="range" id="seekControl" value="0" min="0" step="0.1">
+                <p id="duration">0:00</p>
             </div>
         </div>
 
