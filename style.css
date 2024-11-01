@@ -23,8 +23,7 @@ form {
     height: 100%;
     width: calc(80% - 250px);
     background-color: #474A56;
-    outline: 2px dashed gray;
-    border-radius: 5px;
+    border-radius: 10px; 
     justify-content: center;
     align-items: center;
     margin-inline: 5px;

@@ -137,4 +137,15 @@ document.addEventListener('DOMContentLoaded', () => {
         return `${min < 10 ? '0' : ''}${min}:${sec < 10 ? '0' : ''}${sec}`;
     }
 
+    document.addEventListener('keydown', (event) => {
+        if(event.code === 'Space') {
+            event.preventDefault();
+            play_stat();
+        }
+
+        if(event.code === 'KeyM') {
+            event.preventDefault();
+            volume_stat();
+        }
+    });
 });
